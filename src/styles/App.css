@@ -1,0 +1,135 @@
+.App {
+  margin: 20px 0;
+}
+
+.left-section {
+  background-color: #dddddd;
+  height: 500px;
+  padding: 10px;
+  overflow: scroll;
+  width: 231px;
+}
+.posts {
+  background-color: #dddddd;
+  height: 500px;
+  padding: 10px;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* card component */ 
+.card{
+  margin: 10px auto !important;
+}
+.card.small {
+  width: 200px;
+  text-align: center;
+}
+.card.small.active{
+   background: #AAA3FE;
+  ;
+}
+
+.card.medium {
+  width: 400px;
+  cursor: pointer;
+}
+
+.card-body {
+  padding: 10px 1.2rem !important;
+}
+
+/*  */
+
+/* post */
+
+.post {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.post form input {
+  display: block;
+}
+
+#body-input {
+  width: 100%;
+  height: 81px;
+  padding-left: 10px;
+  margin: 10px;
+  border: 1px solid #6200ee;
+ outline: none;
+}
+
+#title-input {
+  width: 100%;
+  height: 54px;
+  padding-left: 10px;
+  margin: 10px;
+  border: 1px solid #6200ee;
+  outline: none;
+}
+
+.post__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+.post__buttons button {
+  outline: none;
+  background-color: #fff;
+  width: 100px;
+  height: 48px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 2px 4px 0px #00000033, 0px 1px 10px 0px #0000001f, 0px 4px 5px
+    0px #00000024;
+}
+
+
+
+@media only screen and  (max-width:766px){
+  .left-section{
+    width: 100%;
+    margin-bottom: 30px;
+    
+  }
+}
+
+@media only screen and  (max-width:500px){
+  .card.medium{
+    width: 332px;
+    
+  }
+}
+
+@media only screen and  (max-width:320px){
+  .card.medium{
+    width: 250px;
+    
+  }
+  .post__buttons{
+    flex-direction: column;
+  }
+  .post__buttons button{
+    margin-bottom: 20px;
+  }
+}
