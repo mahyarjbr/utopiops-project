@@ -2,8 +2,11 @@ export const PostsReducer = (state = { posts: [] }, action) => {
   switch (action.type) {
     case "POSTS_LIST_REQUEST":
       return { loading: true };
+
     case "GET_POSTS":
       return { loading: false, posts: action.payload };
+    case "UPDATE_POSTS":
+      return { ...state, ...action.payload };
 
     case "POSTS_LIST_FAIL":
       return { loading: false, error: action.payload };
@@ -31,10 +34,10 @@ export const PostDetailReducer = (
 export const UserPostsReducer = (state = {}, action) => {
   switch (action.type) {
     case "USER_POSTS_REQUEST":
-      return { loading: true,  };
+      return { loading: true };
 
     case "GET_USER_POSTS":
-      return { loading: false ,userPosts: action.payload };
+      return { loading: false, userPosts: action.payload };
     case "UPDATE_POSTS":
       return { userPosts: action.payload };
 

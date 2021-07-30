@@ -13,7 +13,7 @@ const LeftSection = () => {
     <div className="left-section">
       {arr.map((user) => (
         
-        <Link to={`/user${user}`}>
+        <Link to={`/user/${user}`}>
         <UserCard key={user} userId={user} content={`User${user}`} />
         </Link>
         

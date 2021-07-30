@@ -13,7 +13,9 @@ const Post = (props) => {
   const handleEditPost = (e) => {
     e.preventDefault();
     dispatch(editPostAction(postData));
-    props.history.push(`/user${postData.userId}`);
+    setTimeout(() => {
+      props.history.push(`/user/${postData.userId}`);
+    }, 2000);
   };
   useEffect(() => {
     setPostData(post);

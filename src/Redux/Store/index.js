@@ -9,6 +9,11 @@ const initialState = {
       ? JSON.parse(localStorage.getItem("userPosts"))
       : null,
   },
+  postsList: {
+    posts: localStorage.getItem("posts")
+      ? JSON.parse(localStorage.getItem("posts"))
+      : null,
+  },
 };
 
 export const store = createStore(

@@ -8,7 +8,7 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(postsAction());
-  }, []);
+  }, [dispatch]);
   return (
     <>
       <GlobalState />

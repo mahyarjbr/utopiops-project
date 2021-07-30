@@ -5,6 +5,7 @@ export const postsAction = () => async (dispatch) => {
       .then((response) => response.json())
       .then((json) => {
         dispatch({ type: "GET_POSTS", payload: json });
+        localStorage.setItem("posts", JSON.stringify(json));
       });
   } catch (err) {
     dispatch({ type: "POSTS_LIST_FAIL", payload: err.message });
@@ -31,13 +32,13 @@ export const getUserPosts = (userId) => async (dispatch, getState) => {
   let arr = [];
   arr = [...posts.filter((post) => post.userId == userId)];
   dispatch({ type: "GET_USER_POSTS", payload: arr });
-  localStorage.setItem("userPosts",JSON.stringify(arr))
+  localStorage.setItem("userPosts", JSON.stringify(arr));
 };
 
 export const editPostAction = (post) => async (dispatch, getState) => {
   dispatch({ type: "POST_EDIT_REQUEST" });
 
-  const allPosts = [...getState().userInfo.userPosts];
+  const allPosts = [...getState().postsList.posts];
   const postIndex = allPosts.findIndex((p) => p.id == post.id);
 
   try {
@@ -58,7 +59,7 @@ export const editPostAction = (post) => async (dispatch, getState) => {
         allPosts[postIndex] = json;
 
         dispatch({ type: "UPDATE_POSTS", payload: allPosts });
-        localStorage.setItem("userPosts",JSON.stringify(allPosts))
+        localStorage.setItem("posts", JSON.stringify(allPosts));
       });
   } catch (err) {
     dispatch({ type: "POST_DETAIL_FAIL", payload: err.message });

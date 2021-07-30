@@ -16,21 +16,21 @@ const Card = (props) => {
       {setRedux ? (
         <div
           onClick={() => handlePostDetail(id)}
-          class={`card ${size}`}
+          className={`card ${size}`}
          
         >
-          <div class="card-body">
-            <p class="card-text">{content}</p>
+          <div className="card-body">
+            <p className="card-text">{content}</p>
           </div>
         </div>
       ) : (
         <div
           
-          class={`card ${size}`}
+          className={`card ${size}`}
          
         >
-          <div class="card-body">
-            <p class="card-text">{content}</p>
+          <div className="card-body">
+            <p className="card-text">{content}</p>
           </div>
         </div>
       )}
