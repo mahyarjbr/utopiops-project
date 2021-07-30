@@ -1,6 +1,6 @@
-import React, {  } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import UserCard from "./UserCard";
 
 const LeftSection = () => {
@@ -12,11 +12,16 @@ const LeftSection = () => {
   return (
     <div className="left-section">
       {arr.map((user) => (
-        
-        <Link to={`/user/${user}`}>
-        <UserCard key={user} userId={user} content={`User${user}`} />
-        </Link>
-        
+        <NavLink
+          className="nav-link"
+          activeStyle={{
+            background: "#AAA3FE",
+          }}
+          
+          to={`/user/${user}`}
+        >
+          {`user${user}`}
+        </NavLink>
       ))}
     </div>
   );

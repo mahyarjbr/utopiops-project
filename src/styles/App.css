@@ -8,6 +8,8 @@
   padding: 10px;
   overflow: scroll;
   width: 231px;
+  display: flex;
+  flex-direction: column;
 }
 .posts {
   background-color: #dddddd;
@@ -19,17 +21,27 @@
   flex-direction: column;
 }
 
-/* card component */ 
-.card{
+/* card component */
+.card {
   margin: 10px auto !important;
 }
 .card.small {
   width: 200px;
   text-align: center;
 }
-.card.small.active{
-   background: #AAA3FE;
-  ;
+.card.small.active {
+  background: #aaa3fe;
+}
+.nav-link {
+  width: 200px !important;
+  text-align: center !important;
+  margin: 10px auto !important;
+  border-radius: 0.25rem !important;
+  background-color: #fff !important;
+  padding: 10px 1.2rem !important;
+}
+.nav-link.active {
+  background: #aaa3fe !important;
 }
 
 .card.medium {
@@ -51,7 +63,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
- 
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +85,7 @@
   padding-left: 10px;
   margin: 10px;
   border: 1px solid #6200ee;
- outline: none;
+  outline: none;
 }
 
 #title-input {
@@ -100,36 +112,31 @@
   height: 48px;
   border: none;
   border-radius: 50px;
-  box-shadow: 0px 2px 4px 0px #00000033, 0px 1px 10px 0px #0000001f, 0px 4px 5px
-    0px #00000024;
+  box-shadow: 0px 2px 4px 0px #00000033, 0px 1px 10px 0px #0000001f,
+    0px 4px 5px 0px #00000024;
 }
 
-
-
-@media only screen and  (max-width:766px){
-  .left-section{
+@media only screen and (max-width: 766px) {
+  .left-section {
     width: 100%;
     margin-bottom: 30px;
-    
   }
 }
 
-@media only screen and  (max-width:500px){
-  .card.medium{
+@media only screen and (max-width: 500px) {
+  .card.medium {
     width: 332px;
-    
   }
 }
 
-@media only screen and  (max-width:320px){
-  .card.medium{
+@media only screen and (max-width: 320px) {
+  .card.medium {
     width: 250px;
-    
   }
-  .post__buttons{
+  .post__buttons {
     flex-direction: column;
   }
-  .post__buttons button{
+  .post__buttons button {
     margin-bottom: 20px;
   }
 }

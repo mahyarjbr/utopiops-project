@@ -2,6 +2,7 @@ import React from "react";
 
 const UserCard = (props) => {
   const { content } = props;
+  console.log(props)
 
   return (
     <div id="pinkcard" className="card small" style={{ margin: "10px" }}>
